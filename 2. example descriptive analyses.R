@@ -15,7 +15,7 @@ data <- data %>% mutate(
   #those eligible for ACE/ARB treatment: anyone with uACR >=3mg/mmol who "tolerates" treatment. Pragmatically, I've used a threshold of SBP 110mmHg (at this level I would feel comfortable adding low-dose ACEi/ARB)
   eligible_aceorarb = ifelse(uacr >= 3 & presbp >= 110, T, F),
   #anyone with T2D and CKD should be considered for a statin
-  eligible_statin = any_ckd,
+  eligible_statin = T,
   #SGLT2: there are different grades of recommendations. Those with uacr >=30 should be offered an SGLT2 for kidney protection. Those with uacr >=3 should be considered for an SGLT2 for kidney protection, and for those with a eGFR <90 it is an option.
   macroalbuminuria = ifelse(uacr>=30, T, F),
   eligible_sglt2_kidney = ifelse(preegfr <90 | uacr >=3, T, F),

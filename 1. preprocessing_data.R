@@ -71,4 +71,4 @@ data <- data %>% select(
 )
 
 setwd("C:/Users/tj358/OneDrive - University of Exeter/CPRD/2024/Raw data/")
-data %>% save(file=paste0(today, "_cross_section_2024_march_for_Ebi.Rda"))
+save(data, file=paste0(today, "_cross_section_2024_march_for_Ebi.Rda"))
